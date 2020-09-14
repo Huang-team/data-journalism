@@ -277,64 +277,94 @@
             <p>此外，对于平常接触到的男性被性侵的案件，大多数人表示只了解过一两例，甚至是完全不了解。</p>
 <!--            <p><img src="img/案件占比%20人们认识%20%20浮雕版.jpg" alt="圆饼图" style="width: 50%;margin-left: 26%;"></p>-->
 
-            <div id="main3" style="width: 600px;height:400px;font-size: 20px;margin-left: 16%;margin-top: 10%;"></div>
+            <div id="main3" style="width: 600px;height:400px;font-size: 20px;margin-left: 16%;margin-top: 7%;"></div>
             <script type="text/javascript">
               var myChart = echarts.init(document.getElementById('main3'));
-              var option = {
+              option = {
                 title: {
-                  text: '人们了解到的男性遭受性侵案件的数量占比（%）',
-
-                  left: 'center'
+                  text: '人们了解男性遭受性侵案件数量的情况',
+                  left: 'center',
+                  y: 10,
+                  textStyle: {
+                    color: '#333'
+                  }
                 },
-                tooltip: {
-                  trigger: 'item',
-                  formatter: '{a} <br/>{b} : {c} ({d}%)'
+                backgroundColor: '#eee',
+                xAxis: {
+
+                  splitLine: {
+                    show: false
+                  },
+                  axisLine: {
+                    show: false
+                  },
+                  axisLabel: {
+                    show: false
+                  },
+                  axisTick: {
+                    show: false
+                  }
                 },
-                legend: {
-                  orient: 'vertical',
-                  left: 'left',
-                  data: ['一两例', '完全不了解', '十几例', '非常多'],
-                  bottom:'left'
+                yAxis: [{
+                  type: 'category',
+                  inverse: false,
+                  data: [
+                    '非常多',
+                    '十几例',
+                    '一两例',
+                    '完全不了解'
+                  ],
+                  axisLine: {
+                    show: false
+                  },
+                  axisTick: {
+                    show: false
+                  },
+                  axisLabel: {
+
+                    textStyle: {
+                      color: '#333',
+                      fontSize: 16.25
+                    }
+                  },
+                  offset: 40,
                 },
 
-
-
-                series: [
-                  {
-                    name: '数目占比',
-                    type: 'pie',
-                    radius: '55%',
-                    center: ['50%', '60%'],
-                    data: [
-                      {value: 57.69, name: '一两例',itemStyle: {color:'#d6b59f'}},
-                      {value: 34.62, name: '完全不了解',itemStyle: {color:'#c57d5a'}},
-                      {value: 6.15, name: '十几例',itemStyle: {color:'#b65434'}},
-                      {value: 1.54, name: '非常多',itemStyle: {color:'#a2412c'}}
-                    ],
-                    itemStyle: {
-                      normal: {
-                        label: {
-                          show: true,
-                          position: 'out',
-                          formatter: '{d}%'
-                        }
-                      }
-                    },
-                    emphasis: {
-                      itemStyle: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                ],
+                // grid: {
+                //     containLabel: true,
+                //     left: 30
+                // },
+                grid:{ left:'30%',top:'17%'},
+                series: [{
+                  type: 'pictorialBar',
+                  symbol: 'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFHGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTA5LTEyVDE0OjM0OjMyKzA4OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wOS0xMlQxNDozNTo0OSswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wOS0xMlQxNDozNTo0OSswODowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5OGNmYTMzMS05M2ExLTNjNGMtOTVkYy03MmFhOTNiYTQxYjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OThjZmEzMzEtOTNhMS0zYzRjLTk1ZGMtNzJhYTkzYmE0MWIxIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6OThjZmEzMzEtOTNhMS0zYzRjLTk1ZGMtNzJhYTkzYmE0MWIxIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo5OGNmYTMzMS05M2ExLTNjNGMtOTVkYy03MmFhOTNiYTQxYjEiIHN0RXZ0OndoZW49IjIwMjAtMDktMTJUMTQ6MzQ6MzIrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz444SbRAAAC20lEQVR4nO3cTW7bQBBE4VaQU+UquUsWuYuvkmspi4CAYRixOBKnq6vet/YPOf1IjSCIt/v9Xsj1rfsA0IsAwhFAuO/dB/CsP79+nv2Vs5ue25kf/vH77eSf7zU+gBNWd7vH750KYYqEAF71NscyBPc9wBXvca3eNzsHcOWgbCJwDWDHgCwicAxg52DGR+AWQMdARkfgFgBOcgqg80ocexdwCgALXAJQuAIVjuE0lwCwiADCEUA4hwBGvvaqcAhAybgYCSCcQwBWn8/v5hCAknExEkA4AghHAOFcAlB47VU4htNcAsAipwA6r8CRV3+VVwBY4BZAx5U49uqv8gugau9ARg+/yjOAqj2DGT/8Kt8Aqq4dkMXwq7wDqLpmUDbDr8r4dvAxsGc/q7ca/CEhgMNqCJaDP9x4Slg29z0AvkAA4QggnNwmcOGpXx91bGqe2ih2PllMLoBF3TvZ9/9/1LuG6QF0D/4zo54mNjUAxcF/NCKEiZvACcN/T/p4pwUgvZj/IXvckwKQXcQHSR7/lAAkF2+B3HlMCEBu0Z4kdT7qAUgtliP1AFzJhK0cgMwiXUTi/FQDkFicBKoBYBMC6NV+p1MMoH1RkigGgI0IoF/rHY8AwhFAOAIIRwDhCCAcAYQjgHAEEI4AwhFAOAIIRwDhCCAcAYQjgHAEEI4AwhFAOAIIRwDhCCAcAYQjgHAEEI4AwhFAOALo1/ogSQIIpxiA9KNVX6z9XBUDqBJYmA0kzlE1gCqRBbqIzLkpB1D1b6FkFutFpM5nyuPiH1m07kfLSA32Uep3AFyMAMIRQDgCCEcA4QggHAGEI4BwBBCOAMIRQDgCCEcA4QggHAGEI4BwBBCOAMIRQDgCCEcA4QggHAGEI4BwTgGM/GJGN6cAsIAAXmPs3cctgI5BjB1+lV8AVcMHsptjAFV7IrD46rprAFXXDmf84A+3+737a/Xo5HwHwAMIIBwBhPsLogpBCZifyxMAAAAASUVORK5CYII=',
+                  symbolRepeat: true,
+                  symbolMargin: '0%',
+                  symbolClip: true,
+                  symbolSize: ['70%', '70%'],
+                  symbolPosition: 'start',
+                  symbolOffset: [
+                    -7.5,0
+                  ],
+                  label: {
+                    normal: {
+                      show: true,
+                      position: 'right',
+                      color: '#333',
+                      offset: [2, 2],
+                      formatter: function(params) {
+                        return params.value;
                       }
                     }
-                  }
-                ]
+                  },
+                  data: [2, 8, 75,45,]
+                }]
               };
-
               myChart.setOption(option);
             </script>
 
-            <p style="margin-top: 8%;">不仅如此，对于性侵事件，男性在大多数情况下是大众眼中的戴罪之身，每当有女性被性侵的事件爆出，男性往往成为被声讨的捕猎者，而女性则是需要正义加持和细心保护的羔羊。男性是需要被防备的“狼”，而女性则都需要备上“防狼喷雾”。这些一次次强化了大众脑海中关于两性关系的强弱地位，怜悯和保护的天平近乎垂直。</p>
+            <p style="margin-top: 0%;">不仅如此，对于性侵事件，男性在大多数情况下是大众眼中的戴罪之身，每当有女性被性侵的事件爆出，男性往往成为被声讨的捕猎者，而女性则是需要正义加持和细心保护的羔羊。男性是需要被防备的“狼”，而女性则都需要备上“防狼喷雾”。这些一次次强化了大众脑海中关于两性关系的强弱地位，怜悯和保护的天平近乎垂直。</p>
           </div>
         </div>
       </div>
@@ -358,7 +388,7 @@
               </div>
               <img src="img/情况图.jpg" alt="情况图" style="width: 68%;margin-left: 16%;margin-top: 4%;">
               <p style="margin-top: 5%;margin-left: 10%">在过去的20年内，虽然鲜少有男性被性侵的事件被报道，但不报道，并不代表没有。</p>
-              <p><img src="img/大事记.jpg" alt="大事记.jpg" style="width: 75%;margin-left: 12%;margin-top: 1.5%;margin-bottom: 3%"></p>
+              <p><img src="img/大事记.jpg" alt="大事记.jpg" style="width: 70%;margin-left: 15%;margin-top: 1.5%;margin-bottom: 3%"></p>
               <p style="margin-left: 10%;margin-right: 10%">性侵从来都应该是一种伤害行为，被侵害者可以是SHE，也可以是HE，恶魔无关性别，受害者也不应是一以概之，更不应该引发性别对立和骂战。</p>
             </div>
           </div>
